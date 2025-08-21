@@ -1,0 +1,20 @@
+pkgbase = reboot-into-windows
+	pkgdesc = Reboot into dual-booted Windows with a Bluetooth keyboard
+	pkgver = 0.1
+	pkgrel = 1
+	arch = any
+	license = MIT
+	depends = bash
+	depends = gawk
+	depends = grep
+	options = !debug
+	source = reboot-into-windows
+	source = reboot-into-windows.desktop
+	source = icon.svg
+	source = sudoers
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = SKIP
+
+pkgname = reboot-into-windows

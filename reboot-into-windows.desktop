@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Reboot into Windows
+Terminal=false
+Exec=sudo reboot-into-windows
+Icon=/usr/share/reboot-into-windows/icon.svg
+Categories=System
