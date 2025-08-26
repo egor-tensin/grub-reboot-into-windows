@@ -1,6 +1,6 @@
 # Maintainer: Egor Tensin <egor@tensin.name>
 pkgname=reboot-into-windows
-pkgver=0.1
+pkgver=0.2
 pkgrel=1
 pkgdesc='Reboot into dual-booted Windows with a Bluetooth keyboard'
 arch=(any)
