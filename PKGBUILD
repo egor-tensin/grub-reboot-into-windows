@@ -1,28 +1,21 @@
 # Maintainer: Egor Tensin <egor@tensin.name>
-pkgname=reboot-into-windows
-pkgver=0.2
+pkgname=grub-reboot-into-windows
+pkgver=0.1
 pkgrel=1
 pkgdesc='Reboot into dual-booted Windows with a Bluetooth keyboard'
 arch=(any)
+url="https://github.com/egor-tensin/$pkgname"
 license=(MIT)
 depends=(bash gawk grep)
-source=(
-    "$pkgname"
-    "$pkgname.desktop"
-    icon.svg
-    sudoers
-)
-sha256sums=(
-    SKIP
-    SKIP
-    SKIP
-    SKIP
-)
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
+sha256sums=(SKIP)
 options=('!debug')
 
 package() {
-    install -D -m 0755 -t "$pkgdir/usr/bin" "$srcdir/$pkgname"
-    install -D -m 0644 -t "$pkgdir/usr/share/applications" "$srcdir/$pkgname.desktop"
-    install -D -m 0644 -t "$pkgdir/usr/share/$pkgname" "$srcdir/icon.svg"
-    install -D -m 0640 -t "$pkgdir/etc/sudoers.d/reboot-into-windows" sudoers
+    cd -- "$pkgname-$pkgver"
+
+    install -D -m 0755 -t "$pkgdir/usr/bin" "bin/$pkgname"
+    install -D -m 0644 -t "$pkgdir/usr/share/applications" "share/$pkgname.desktop"
+    install -D -m 0644 -t "$pkgdir/usr/share/$pkgname" share/icon.svg
+    install -D -m 0640 -t "$pkgdir/etc/sudoers.d/$pkgname" etc/sudoers
 }

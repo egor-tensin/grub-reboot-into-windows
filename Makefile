@@ -1,6 +1,6 @@
 include prelude.mk
 
-PKG_NAME := reboot-into-windows
+PKG_NAME := grub-reboot-into-windows
 
 .PHONY: all
 all: build
