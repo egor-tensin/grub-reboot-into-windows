@@ -1,1 +1,1 @@
-grub-reboot-into-windows text eol=lf
+script text eol=lf
