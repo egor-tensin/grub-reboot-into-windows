@@ -1,6 +1,6 @@
 # Maintainer: Egor Tensin <egor@tensin.name>
 pkgname=grub-reboot-into-windows
-pkgver=0.1
+pkgver=0.2
 pkgrel=1
 pkgdesc='Reboot into dual-booted Windows with a Bluetooth keyboard'
 arch=(any)
@@ -14,8 +14,8 @@ options=('!debug')
 package() {
     cd -- "$pkgname-$pkgver"
 
-    install -D -m 0755 -t "$pkgdir/usr/bin" "bin/$pkgname"
-    install -D -m 0644 -t "$pkgdir/usr/share/applications" "share/$pkgname.desktop"
+    install -D -m 0755 -T bin/script "$pkgdir/usr/bin/$pkgname"
+    install -D -m 0644 -T share/script.desktop "$pkgdir/usr/share/applications/$pkgname.desktop"
     install -D -m 0644 -t "$pkgdir/usr/share/$pkgname" share/icon.svg
-    install -D -m 0640 -t "$pkgdir/etc/sudoers.d/$pkgname" etc/sudoers
+    install -D -m 0640 -T etc/sudoers "$pkgdir/etc/sudoers.d/$pkgname"
 }
